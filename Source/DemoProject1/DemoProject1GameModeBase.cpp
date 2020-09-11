@@ -23,7 +23,7 @@ AEnemySpaceship* ADemoProject1GameModeBase::SpawnEnemy(const FVector& Location)
 	FActorSpawnParameters SpawnInfo;
 	SpawnInfo.Instigator = nullptr;
 	SpawnInfo.bNoFail = true;
-	SpawnInfo.ObjectFlags |= RF_Transient;	// We never want to save bullet into a map
+	SpawnInfo.ObjectFlags |= RF_Transient;	// We never want to save enemies into a map
 	auto enemyShip = GetWorld()->SpawnActor<AEnemySpaceship>(EnemySpaceshipClass.Get(), Location, FRotator::ZeroRotator, SpawnInfo);
 	return enemyShip;
 }
